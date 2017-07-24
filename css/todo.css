@@ -1,0 +1,225 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+#zhuti{
+	padding: 0;
+}
+
+#head{
+	position: relative;
+	width: 550px;
+	margin: 0 auto;
+	margin-top: -90px;
+}
+
+p{
+	font-size: 100px;
+	color: #e9d7d7;
+	text-align: center;
+}
+
+#add{
+	/*    transform:rotate(45deg);      //可用来倾斜div */
+	float: left;
+	margin-top: -52px;
+	margin-left: 65px;
+	font-style:italic;
+	border: none;
+	width: 470px;
+    font-size: 25px;
+}
+
+::-webkit-input-placeholder { /*input背景提示文字(placeholder)的样式修改*/
+    color:#e7e6e6; 
+}
+::-moz-placeholder { /* firefox 19+ */
+    color:#e7e6e6;
+}
+:-ms-input-placeholder { /* ie */
+    color:#e7e6e6;
+}
+input:-moz-placeholder {
+    color:#e7e6e6;
+}
+
+button,input[type="checkbox"]{
+	background-color: white;
+	border: none;
+	outline: none;
+}
+
+#add,.lbTxt{
+    appearance: none;
+    outline:medium;
+}
+
+#main,#btn{
+	width: 548px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+#main,#btn{
+	border: 1px solid #d7d7d7;
+}
+
+#main{
+	position: relative;
+	margin-top: -90px;
+	height: 65px;
+}
+
+#main,#todoList,#btn{
+	box-shadow: -1px -1px 20px 12px rgba(0,0,0,0.03);
+}
+
+#allCkb{
+	width: 45px;
+	height: 65px;
+}
+
+#btn,li{
+	border-top: none;
+}
+
+#btn{
+	position: relative;
+	top: -32px;
+	height: 30px;
+	padding-top: 8px;
+	border-top: 1px solid #d7d7d7;
+}
+
+#btn button,#btn{
+	font-size: 14px;
+	color: #7f7d7d;
+}
+
+
+
+li{
+	position: relative;
+	list-style: none;
+	color: #363535;
+	background-color: white;
+	width: 548px;
+	left: -40px;
+    font-size: 24px;
+    line-height: 2.5em;
+    border-bottom: 1px solid #ededed;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    overflow: auto;
+}
+
+#todoList{
+	position: relative;
+	width: 548px;
+	margin: 0 auto;
+	top: -16px;
+    left: -1px;
+}
+
+#all{
+	top: -10px;
+}
+
+.lbTxt{
+	float: left;
+	width: 430px;
+	margin-left: 65px;
+	word-break: break-all;
+}
+
+#inputlb{
+	height: 55px;
+	width: 479px;
+	font-size: 25px;
+}
+
+
+.ckbn,.clearX{
+	text-align: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: none;
+    -webkit-appearance: none;
+    transition: color 0.2s ease-out;
+}
+
+.clearX{
+	display: none;
+    font-size: 30px;
+    color: #cc9a9a;	
+}
+
+.clearX:hover{
+	color: #af5b5e;
+}
+
+
+
+#record{
+	width: 99px;
+	float: left;
+	margin-left: 15px;
+}
+
+.bt3{
+	padding-left: 12px;
+	float: left;
+	margin-left: 72px;
+}
+
+#All{
+	width: 30px;
+}
+
+#Active{
+	width: 55px;
+}
+
+#Completed{
+	width: 90px;
+}
+
+.bt3 button:hover{
+	border: 1px solid #efd5d5 !important;
+}
+
+#clear{
+	float: right;
+	margin-right: 10px;
+}
+
+#clear:hover{
+	text-decoration: underline;
+}
+
+.foot{
+	display: none;
+	position: relative;
+	background-color: white;
+	height: 4px;
+	margin: 0 auto;
+	border: 1px solid #d7d7d7;
+	border-top: none;
+	top: -32px;
+	box-shadow: 0px 8px 20px 1px rgba(54, 53, 53, 0.27);
+}
+#foot1{
+	width: 544px;
+}
+#foot2{
+	width: 540px;
+}
+#foot3{
+	width: 536px;
+}
