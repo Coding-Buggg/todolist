@@ -66,10 +66,10 @@ $(document).ready(function () {
         }
         else {
             if (notckbClick().length === 0) {
-                $("#allCkb").html("<img src='..\\img\\all_check-1.jpg' >");
+                $("#allCkb").html("<img src='img\\all_check-1.jpg' >");
             }
             else {
-                $("#allCkb").html("<img src='..\\img\\all_check.jpg' >");
+                $("#allCkb").html("<img src='img\\all_check.jpg' >");
             }
 
         }
@@ -83,8 +83,8 @@ $(document).ready(function () {
         notCkbparent().children("label")
         .css({"text-decoration": "none","color": "#363535"});
 
-        ckbClick().css("background","url(../img/checkbox-1.jpg)");
-        notckbClick().css("background","url(../img/checkbox.jpg)");
+        ckbClick().css("background","url(img/checkbox-1.jpg)");
+        notckbClick().css("background","url(img/checkbox.jpg)");
     }
 
     // 获取本地存储并使用JSON.parse转化数据
