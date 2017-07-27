@@ -326,6 +326,7 @@ $(document).ready(function () {
         // 文本框失去焦点后提交内容，重新变为文本
         $("#inputlb").blur(function () {
             inputReplaceWith(theIndex);
+            doneText();
             // 重新设置事件代理
             $("#all").delegate("li","mouseover",xShow);
         });
@@ -334,6 +335,7 @@ $(document).ready(function () {
             if (event.keyCode === 13) {
                 localStorage.key(txt) = $("#inputlb").val();
                 inputReplaceWith();
+                doneText();
                 // 重新设置事件代理
                 $("#all").delegate("li","mouseover",xShow);
             }
