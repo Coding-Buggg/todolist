@@ -333,8 +333,7 @@ $(document).ready(function () {
 
         $("#inputlb").keydown(function (event) {
             if (event.keyCode === 13) {
-                localStorage.key(txt) = $("#inputlb").val();
-                inputReplaceWith();
+                inputReplaceWith(theIndex);
                 doneText();
                 // 重新设置事件代理
                 $("#all").delegate("li","mouseover",xShow);
