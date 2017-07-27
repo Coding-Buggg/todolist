@@ -66,10 +66,10 @@ $(document).ready(function () {
         }
         else {
             if (notckbClick().length === 0) {
-                $("#allCkb").html("<img src='img\\all_check-1.jpg' >");
+                $("#allCkb").html("<img src='images\\all_check-1.jpg' >");
             }
             else {
-                $("#allCkb").html("<img src='img\\all_check.jpg' >");
+                $("#allCkb").html("<img src='images\\all_check.jpg' >");
             }
 
         }
@@ -83,8 +83,8 @@ $(document).ready(function () {
         notCkbparent().children("label")
         .css({"text-decoration": "none","color": "#363535"});
 
-        ckbClick().css("background","url(img/checkbox-1.jpg)");
-        notckbClick().css("background","url(img/checkbox.jpg)");
+        ckbClick().css("background","url(images/checkbox-1.jpg)");
+        notckbClick().css("background","url(images/checkbox.jpg)");
     }
 
     // 获取本地存储并使用JSON.parse转化数据
@@ -174,7 +174,7 @@ $(document).ready(function () {
         if (x === 0) {
             var liTemp = ""
             + "<li>" 
-            +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../img/checkbox.jpg) no-repeat' >"
+            +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../images/checkbox.jpg) no-repeat' >"
             +    "<label class='lbTxt'>" + newItem + "</label>" 
             +    "<button class='clearX' >" + "×" + "</button>" 
             + "</li>";
@@ -184,7 +184,7 @@ $(document).ready(function () {
         else {
             var liTemp = ""
             + "<li>" 
-            +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../img/checkbox.jpg) no-repeat' checked='checked'>"
+            +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../images/checkbox.jpg) no-repeat' checked='checked'>"
             +    "<label class='lbTxt'>" + newItem + "</label>" 
             +    "<button class='clearX' >" + "×" + "</button>" 
             + "</li>";

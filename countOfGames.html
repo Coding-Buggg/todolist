@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>当下热门游戏</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <style>
+        body {
+          padding-top: 50px;
+          padding-bottom: 30px;
+        }
+
+        .carousel {
+          height: 500px;
+          background-color: #000;
+          margin-bottom: 60px;
+        }
+
+        .carousel .item{
+          height: 500px;
+          background-color: #000;
+        }
+
+        .carousel img{
+          width: 100%;
+        }
+
+        .guanwang {
+          color: white;
+        }
+
+        #summary-container .col-md-3{
+          text-align: center;
+        }
+
+        #summary-container .col-md-3 img{
+          width: 180px;
+          height: 120px;
+        }
+
+        hr .divider{
+          margin-top: 40px 0;
+        }
+
+        .feature{
+          padding: 30px 0;
+        }
+
+        .tab-h2{
+          font-size: 50px;
+          margin-top: 80px;
+          text-align: center;
+          color: rgba(18, 10, 60, 0.67);
+        }
+        .tab-h2-span{
+          font-size: 28px;
+          color: #d7d7d7;
+        }
+
+        .col-md-7 img{
+          width: 600px;
+          height: 300px;
+          margin-left: 30px;
+        }
+      </style>
+  </head>
+  <body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">热门游戏</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="demo-navbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">游戏概览<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">详情<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#tab-wangzhe">王者荣耀</a></li>
+            <li><a href="#tab-lol">英雄联盟</a></li>
+            <li><a href="#tab-shouwang">守望先锋</a></li>
+            <li><a href="#tab-dnf">地下城与勇士</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-toggle="modal" data-target="#aboutme">关于</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 轮播图 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/wangzhe.gif" alt="王者荣耀">
+      <div class="carousel-caption">
+        <h1>王者荣耀</h1>
+        <p>由腾讯游戏开发并运行的一款运营在Android、IOS平台上的MOBA类手机游戏。</p>
+        <h3><a href="http://pvp.qq.com/" class="guanwang">进入官网</a></h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/LOL.jpg" alt="英雄联盟">
+      <div class="carousel-caption">
+        <h1>英雄联盟</h1>
+        <p>由美国拳头游戏(Riot Games)开发、中国大陆地区腾讯游戏代理运营的英雄对战MOBA竞技网游。</p>
+        <h3><a href="http://lol.qq.com/" class="guanwang">进入官网</a></h3>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/shouwang.jpg" alt="守望先锋">
+      <div class="carousel-caption">
+        <h1>守望先锋</h1>
+        <p>由暴雪娱乐公司开发的一款第一人称射击游戏，于2016年5月24日全球上市，中国大陆地区由网易公司代理。</p>
+        <h3><a href="http://ow.blizzard.cn/home" class="guanwang">进入官网</a></h3>
+      </div>
+    </div>
+        <div class="item">
+      <img src="images/dnf.jpg" alt="地下城与勇士">
+      <div class="carousel-caption">
+        <h1>地下城与勇士</h1>
+        <p>由韩国网络游戏公司NEOPLE开发的免费角色扮演2D游戏,中国由腾讯游戏代理发行。</p>
+        <h3><a href="http://dnf.qq.com/" class="guanwang">进入官网</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">上一页</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">下一页</span>
+  </a>
+</div>
+
+<!-- 四列栅格 -->
+<div class="container" id="summary-container">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="images/wztubiao.jpg" alt="王者荣耀">
+      <h3>王者荣耀</h3>
+        <p>腾讯游戏开发的运营在Android、IOS平台上的MOBA类手机游戏。</p>
+        <h4><a href="http://pvp.qq.com/">进入官网</a></h4>
+    </div>
+    <div class="col-md-3">
+      <img src="images/loltubiao.jpg" alt="英雄联盟">
+      <h3>英雄联盟</h3>
+        <p>中国大陆腾讯代理的英雄对战MOBA竞技网游。</p>
+        <h4><a href="http://lol.qq.com/">进入官网</a></h4>
+    </div>
+    <div class="col-md-3">
+      <img src="images/swtubiao.jpg" alt="守望先锋">
+      <h3>守望先锋</h3>
+        <p>中国大陆网易代理的一款第一人称射击游戏。</p>
+        <h4><a href="http://ow.blizzard.cn/home">进入官网</a></h4>
+    </div>
+    <div class="col-md-3">
+      <img src="images/dnftubiao.jpg" alt="地下城与勇士">
+      <h3>地下城与勇士</h3>
+        <p>中国腾讯游戏代理发行的角色扮演2D游戏。</p>
+        <h4><a href="http://dnf.qq.com/">进入官网</a></h4>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+<!-- 标签页 -->
+<ul class="nav nav-tabs" role="tablist" id="tab-list">
+  <li role="presentation" class="active"><a href="#tab-wangzhe" data-toggle="tab">Arena of Valor</a></li>
+  <li role="presentation"><a href="#tab-lol" data-toggle="tab">LOL</a></li>
+  <li role="presentation"><a href="#tab-shouwang" data-toggle="tab">Overwatch</a></li>
+  <li role="presentation"><a href="#tab-dnf" data-toggle="tab">DNF</a></li>
+</ul>
+  
+<div class="tab-content">
+  <div class="tab-pane active" id="tab-wangzhe">
+  <div class="row feature"> 
+    <div class="col-md-5">
+      <h2 class="tab-h2">王者荣耀<span class="tab-h2-span">卸得越早，生活越好</span></h2>
+        <p>由腾讯游戏开发并运行的一款运营在Android、IOS平台上的MOBA类手机游戏。</p>
+    </div>
+    <div class="col-md-7">
+      <img src="images/wangzhe.jpg" alt="王者荣耀">
+    </div>
+  </div>
+  </div>
+
+  <div class="tab-pane" id="tab-lol">
+    <div class="row feature">
+      <div class="col-md-7">
+        <img src="images/lol.jpg" alt="英雄联盟">
+      </div> 
+      <div class="col-md-5">
+        <h2 class="tab-h2">英雄联盟<span class="tab-h2-span">且随疾风前行</span></h2>
+          <p>由美国拳头游戏(Riot Games)开发、中国大陆地区腾讯游戏代理运营的英雄对战MOBA竞技网游。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-pane" id="tab-shouwang">
+  <div class="row feature">
+ 
+      <div class="col-md-5">
+        <h2 class="tab-h2">守望先锋<span class="tab-h2-span">每日一吸，一吸一日</span></h2>
+          <p>由暴雪娱乐公司开发的一款第一人称射击游戏，于2016年5月24日全球上市，中国大陆地区由网易公司代理。</p>
+      </div>
+      <div class="col-md-7">
+        <img src="images/shouwang.jpg" alt="守望先锋">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-pane" id="tab-dnf">
+    <div class="row feature">
+      <div class="col-md-7">
+        <img src="images/dnf.jpg" alt="地下城与勇士">
+      </div> 
+      <div class="col-md-5">
+        <h2 class="tab-h2">地下城与勇士<span class="tab-h2-span" id="dnf-text">充钱勇士</span></h2>
+          <p>由韩国网络游戏公司NEOPLE开发的免费角色扮演2D游戏,中国由腾讯游戏代理发行。</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<footer>
+  <p class="pull-right"><a href="#top">回到顶部</a></p>
+  <p>©2017-7-27 <a href="https://github.com/Hentailolicons">lolicon-shao</a></p>
+</footer>
+</div>
+
+<!-- 点击关于后的弹出框 -->
+<div class="modal fade" id="aboutme">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">关于</h4>
+      </div>
+      <div class="modal-body">
+        <p>有关于作者可点击<a href="https://github.com/Hentailolicons">这里</a></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">了解</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#demo-navbar .dropdown-menu a").click(function () {
+          var href = $(this).attr("href");
+          $("#tab-list a[href='"+ href +"']").tab("show");
+        });
+      });
+    </script>
+  </body>
+</html>
