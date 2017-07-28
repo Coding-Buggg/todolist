@@ -126,12 +126,12 @@ $(document).ready(function () {
     }
 
     // todo事件的修改
-    function inputReplaceWith(theIndex) {
+    function inputReplaceWith(theIndex,e) {
         if (!$("#inputlb").val()) {
             $("#inputlb").parent().remove();
             localStorageRemove(theIndex);
             checkedThing();
-            return false;
+            e.preventDefault();
         }
         else {
             var newtxt = $("#inputlb").val();
