@@ -22,8 +22,8 @@ $(document).ready(function () {
 
     // 底部按钮的显示
     function btnShow() {
-        var liLength = $("#all li").length;
-        if (liLength != 0) {
+        let liLength = $("#all li").length;
+        if (liLength) {
             $("#btn").show();
             $(".foot").show();
         } 
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     // 获取未完成todo的数量
     function todoNum() {
-        var num = notckbClick().length;
+        let num = notckbClick().length;
         if (num === 1) {
             $("#record").html(num + "item left");
         }
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     // 输入框左侧的全选按钮的显示
     function allCkbShow() {
-        var allLength = $("#all li").length;
+        let allLength = $("#all li").length;
 
         if (allLength === 0) {
             $("#allCkb img").hide();
@@ -78,10 +78,8 @@ $(document).ready(function () {
 
     // 多选框选中与否时文字样式和多选框背景的改变
     function doneText() {
-        ckbparent().children("label")
-        .css({"text-decoration": "line-through","color": "#d7d7d7"});
-        notCkbparent().children("label")
-        .css({"text-decoration": "none","color": "#363535"});
+        ckbClick().siblings('label').css({'text-decoration':'line-through','color':'#d7d7d7'});
+        ckbClick().siblings('label').css({"text-decoration": "none","color": "#363535"});
 
         ckbClick().css("background","url(images/checkbox-1.jpg)");
         notckbClick().css("background","url(images/checkbox.jpg)");
@@ -89,23 +87,23 @@ $(document).ready(function () {
 
     // 获取本地存储并使用JSON.parse转化数据
     function getJsons() {
-        var json = JSON.parse(localStorage.getItem("jsons"));
+        let json = JSON.parse(localStorage.getItem("jsons"));
         return json;
     }
 
     // 存储数据到本地
     function setJsons(json) {
         localStorage.clear();
-        var jsons = JSON.stringify(json);
+        let jsons = JSON.stringify(json);
         localStorage.setItem("jsons",jsons);
     }
 
     // 多选框选中与否时本地state的改变
     function ckbstate() {
-        var jsonArray_1 = getJsons();
-            for (var i = 0; i < $("#all li").length; i++) {
+        let jsonArray_1 = getJsons();
+            for (let i = 0; i < $("#all li").length; i++) {
                 // 遍历li节点
-                var liEq = $("li").eq(i);
+                let liEq = $("li").eq(i);
                 if (liEq.children("input[name='ckb']").is(":checked")) {
                     jsonArray_1[i].state = "checked";
                 }
@@ -120,7 +118,7 @@ $(document).ready(function () {
 
     // 删除某条数据事件
     function localStorageRemove(index) {
-        var jsonArray_2 = getJsons();
+        let jsonArray_2 = getJsons();
         jsonArray_2.splice(index,1);
         setJsons(jsonArray_2); 
     }
@@ -134,9 +132,9 @@ $(document).ready(function () {
             e.preventDefault();
         }
         else {
-            var newtxt = $("#inputlb").val();
+            let newtxt = $("#inputlb").val();
             $("#inputlb").replaceWith("<label class='lbTxt'>" + newtxt + "</label>");
-            var jsonArray_3 = getJsons();
+            let jsonArray_3 = getJsons();
             jsonArray_3[theIndex].content = newtxt;
             setJsons(jsonArray_3);
         }
@@ -172,7 +170,7 @@ $(document).ready(function () {
     // 为ul动态添加li
     function addLi(newItem,x) {
         if (x === 0) {
-            var liTemp = ""
+            let liTemp = ""
             + "<li>" 
             +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../images/checkbox.jpg) no-repeat' >"
             +    "<label class='lbTxt'>" + newItem + "</label>" 
@@ -182,7 +180,7 @@ $(document).ready(function () {
             $("#allCkb img").show();
         }
         else {
-            var liTemp = ""
+            let liTemp = ""
             + "<li>" 
             +    "<input class='ckbn' type='checkbox' name='ckb' style='background: url(../images/checkbox.jpg) no-repeat' checked='checked'>"
             +    "<label class='lbTxt'>" + newItem + "</label>" 
@@ -194,20 +192,20 @@ $(document).ready(function () {
     }
     if (localStorage.length) {
         console.log("have localStorage");
-        var jsonArray_4 = getJsons();
+        let jsonArray_4 = getJsons();
         console.log(jsonArray_4 instanceof Array);
 
-        for (var i = 0;i < jsonArray_4.length; i++) {
+        for (let i = 0;i < jsonArray_4.length; i++) {
             if (!jsonArray_4[i]) {
                     jsonArray_4.splice(i,1);
                     i--;
                 }
         }
 
-        var newlength = jsonArray_4.length;
-        for (var j = 0; j < newlength; j++) {
-            var state = jsonArray_4[j].state;
-            var itemTxt = jsonArray_4[j].content;
+        let newlength = jsonArray_4.length;
+        for (let j = 0; j < newlength; j++) {
+            let state = jsonArray_4[j].state;
+            let itemTxt = jsonArray_4[j].content;
             if (state !== "notchecked") {
                 addLi(itemTxt,1);
             }
@@ -225,24 +223,24 @@ $(document).ready(function () {
         if (event.keyCode === 13) {
             // 判断输入框是否为空
             if ($("#add").val()) {
-                var newItem = $("#add").val();
+                let newItem = $("#add").val();
                 console.log(newItem);
                 addLi(newItem,0);
                 liShow();
                 $("#add").val('');
 
-                var obj = {"content": newItem,"state": "notchecked"};
-                var jsonArray_5 = getJsons();
+                let obj = {"content": newItem,"state": "notchecked"};
+                let jsonArray_5 = getJsons();
                 if (!jsonArray_5) {
                     console.log("no jsonArray_2");
-                    var addarr = [];
+                    let addarr = [];
                     addarr[addarr.length] = obj;
                     setJsons(addarr);
                 }
                 else {
                     jsonArray_5[jsonArray_5.length] = obj;
                     // 去除数组中的空项
-                    for (var i = 0 ;i < jsonArray_5.length; i++) {
+                    for (let i = 0 ;i < jsonArray_5.length; i++) {
                         if (jsonArray_5[i] === null 
                             || typeof(jsonArray_5[i]) == "undefined"
                             || jsonArray_5[i] === ""
@@ -259,8 +257,8 @@ $(document).ready(function () {
 
     // 全选事件
     $("#allCkb").click(function () {
-        var allList = $("#all li").length;
-        var checkboxs = ckbClick().length;
+        let allList = $("#all li").length;
+        let checkboxs = ckbClick().length;
         if (checkboxs !== allList) {
             $("#all :checkbox").prop("checked",true);
         }
@@ -274,9 +272,9 @@ $(document).ready(function () {
 
     // 点击底部Clear completed按钮时，清除被选中的li项
     $("#clear").click(function () {
-        var jsonArray_6 = getJsons();
-        for (var i = 0; i < ckbparent().length; i++) {
-            var ckbnum = ckbparent().index();
+        let jsonArray_6 = getJsons();
+        for (let i = 0; i < ckbparent().length; i++) {
+            let ckbnum = ckbparent().index();
             jsonArray_6.splice(ckbnum,1);
             $("#all li").eq(ckbnum).remove();
             i--;
@@ -317,9 +315,9 @@ $(document).ready(function () {
         console.log(theIndex);
         // 移除代理事件
         $("#all").undelegate("li","mouseover",xShow);
-        var txt = $(this).text();
+        let txt = $(this).text();
         $(this).text("");
-        var input = "<input type='text' id='inputlb' class='lbTxt' value='" + txt + "' />";
+        let input = "<input type='text' id='inputlb' class='lbTxt' value='" + txt + "' />";
         $(this).replaceWith(input);
         // 获取焦点
         $("#inputlb").focus();
